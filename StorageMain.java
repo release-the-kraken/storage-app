@@ -2,9 +2,8 @@
 Storage management console app. Functionalities include: adding new products, deleting products, listing products and shipping products.
 Allows for saving the product list to a json file and reading the file on app start. Title cases product and customer names.
 Further development:
-- validate user input for type,
-- improve titleCase method to allow for title casing more than 1 word,
-- export info on shipments to a json file.
+- validate user price input,
+- export info on shipments to a json file/MongoDB.
  */
 import java.util.Scanner;
 

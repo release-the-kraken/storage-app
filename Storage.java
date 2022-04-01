@@ -35,12 +35,22 @@ public class Storage {
     }
 
     public void deleteProduct(Scanner scanner){
+        if(numOfProducts == 0){//check if storage is empty
+            System.out.println("Magazyn jest pusty.");
+            return;
+        }
         System.out.println("Produkt z której półki chcesz usunąć?\n");
         this.displayProducts();
         int numOfIndex = scanner.nextInt();
         scanner.nextLine();
+        while(listOfProducts[numOfIndex - 1] == null){//if shelf is empty prompt for a new pick
+            System.out.println("Półka jest pusta. Wybierz inną półkę.");
+            numOfIndex = scanner.nextInt();
+            scanner.nextLine();
+        }
         listOfProducts[numOfIndex - 1] = null;
         numOfProducts--;
+
     }
     public void displayProducts() {
         for (int i = 0; i < listOfProducts.length; i++) {
